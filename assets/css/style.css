@@ -23,24 +23,29 @@
         font-size: 2em;
     }
 
-    .top {
-        width: 100%;
-        padding-bottom: 0;
-        background-color: var(--ground1);
-        border-bottom: 2px solid var(--board2);
+    .wrapper {
         position: relative;
-        left: 0;;
-        margin: 0;
+        width: 100%;
+        background-color: var(--ground1);
+        padding: 0;
+    }
+
+    .top {
+        display: block;
+        box-sizing: border-box;
+        margin: 0 auto;    
+        position: relative;
+        width: 960px;
     }
 
     .top h1 {
         position: relative;
         height: 40px;
         width: 220px;
-        padding: 20px; 
+        padding: 20px 10px; 
         background-color: var(--primary);
         color: var(--ground1);
-        left: 456px;
+        left: 0;
         text-justify: left;
         margin: 0;
         display: block;
@@ -54,18 +59,18 @@
         padding: 0;
         margin: 0 auto;
         position: absolute;
-        right: 450px;
-        top: 17px;
+        right: 10%;
+        top: 40%;
     
     }
 
     .top ul li {
         text-decoration-style: none; 
         display: inline-block;
-        font-size: 1.4rem;
-        padding: 0 20px;
+        font-size: 1.2rem;
+        padding: 10px 20px;
         transition: transform 2s;
-        border-left: 2px solid var(--primary);
+        
         }
 
     .top ul li a {
@@ -87,7 +92,7 @@
         margin: 0 auto;
         display: block;
         background-color: var(--ground1);
-        
+        box-sizing: border-box;
         top: 10px;
         padding: 15px;    
     }
@@ -100,10 +105,12 @@
     }
 
     .container header {
+        width: 100%;
         border-bottom: 3px solid var(--primary);
     }
 
     .container img {
+        
         position: relative;
         left: 0;
         top: 10px;
@@ -111,24 +118,32 @@
 
     footer {
         position: fixed;
+        width: 100%;
         bottom: 0;
         left: 0;
         height: 5px;
-        border: 5px 0 solid var(--primary); 
+        background-color: var(--primary); 
     }
 
     .deck {
-        display: inline-block;
-       
+        display: block;       
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-evenly;
     }
 
     .card {
+        
+        width: 200px;
         box-sizing: border-box;
-        display: inline-block;
-        margin: 10px;
+        display: block;
+        margin: 20px;
     }
 
     .card img {
+        width: 100%;
         transition: width 2s;
     }
 
@@ -151,7 +166,7 @@
         font-size: 1.4rem;
         z-index: 2;
         padding: 20px 0px;
-        margin: 0;
+        margin: 0 auto;
     }
 
     .card a img:hover {
@@ -193,8 +208,90 @@
         color: var(--primary);
     }
 
+    @media screen and (max-width: 980px) {
+        body {
+            width: 100%;
+        }   
 
-    
+        .top {
+            width: 100%;
+            background-color: var(--ground1);
+        }
+        .container {
+            width: 100%;
+        }
+    }
 
+    @media screen and (max-width: 768px) {
 
-   
+        body {
+            width: 100%;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        .container {
+            width: 100%;
+        }
+
+        .top {
+            width:100%;
+        }
+
+        .row {
+            flex-wrap: wrap;
+        }
+
+    @media screen and (max-width: 640px) {
+        .top {
+            width: 100%;
+            background-color: var(--ground1);
+        }
+
+        body {
+            width: 100%;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .container {
+            margin: 0 auto;
+            width: 100%
+        } 
+
+        .deck {
+            display: block;
+            padding: 0 auto;
+        }
+
+        .row {
+            flex-direction: column;
+        }
+
+        .card {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .top h1 {
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .top ul {
+            height: 40px;
+            width: 100%;
+            position: static;
+            margin: 0 auto;
+            background-color: var(--ground1);
+            display: inline-block;
+            text-align: center;
+            top: 10px;
+        }
+
+        .top li {
+            margin: 0 auto;
+        }
+    }
+
+    }
